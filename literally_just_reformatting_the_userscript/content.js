@@ -1,5 +1,9 @@
 var xhttp = new XMLHttpRequest();
-var url = window.location.href;
+var url;
+chrome.tabs.getCurrent(function(tab){
+        url = tab.url;
+    }
+);
 xhttp.open("GET","https://web.archive.org/save/"+url,true);
 xhttp.send();
 xhttp.open("GET","https://maker.ifttt.com/trigger/http_request_test/with/key/cysTImCkywHvyn_o9_lYyu",true);
