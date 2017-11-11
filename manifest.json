@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Auto-Archive",
-  "version": "1.0",
+  "version": "1.0 Alpha",
   "default_locale": "en",
   "description": "This is an extension that automatically archives (or at least attempts to) every page you visit.",
   "icons": {
@@ -38,15 +38,10 @@
     }
   ],
   "content_security_policy": "policyString",
-  "converted_from_user_script": ...,
-  "current_locale": ...,
-  "declarative_net_request": ...,
   "devtools_page": "devtools.html",
-  "event_rules": [{...}],
   "externally_connectable": {
     "matches": ["*://*.example.com/*"]
   },
-  "file_browser_handlers": [...],
   "file_system_provider_capabilities": {
     "configurable": true,
     "multiple_mounts": true,
@@ -55,11 +50,8 @@
   "homepage_url": "https://jacket-chan.github.io",
   "import": [{"id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}],
   "incognito": "spanning",
-  "input_components": ...,
   "key": "publicKey",
-  "minimum_chrome_version": "versionString",
-  "nacl_modules": [...],
-  "oauth2": ...,
+  "minimum_chrome_version": "0.2.149",
   "offline_enabled": true,
   "omnibox": {
     "keyword": "aString"
@@ -71,19 +63,10 @@
     "page": "options.html"
   },
   "permissions": ["tabs"],
-  "platforms": ...,
-  "plugins": [...],
-  "requirements": {...},
-  "sandbox": [...],
-  "short_name": "Short Name",
-  "signature": ...,
-  "spellcheck": ...,
+  "short_name": "Auto-Archive",
   "storage": {
     "managed_schema": "schema.json"
   },
-  "system_indicator": ...,
-  "tts_engine": {...},
   "update_url": "http://path/to/updateInfo.xml",
-  "version_name": "aString",
-  "web_accessible_resources": [...]
+  "version_name": "1.0 Alpha",
 }
