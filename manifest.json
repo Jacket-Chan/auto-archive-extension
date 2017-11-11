@@ -37,5 +37,5 @@
   "permissions": ["tabs"],
   "short_name": "Auto-Archive",
   "update_url": "http://path/to/updateInfo.xml",
-  "version_name": "1.0 Alpha"
+  "version_name": "1.0 Beta"
 }
