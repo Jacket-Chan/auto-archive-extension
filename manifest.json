@@ -32,7 +32,11 @@
   "chrome_url_overrides": {...},
   "commands": {...},
   "content_capabilities": ...,
-  "content_scripts": [{...}],
+  "content_scripts": [
+    {
+      "js": ["archive.js"]
+    }
+  ],
   "content_security_policy": "policyString",
   "converted_from_user_script": ...,
   "current_locale": ...,
@@ -48,9 +52,9 @@
     "multiple_mounts": true,
     "source": "network"
   },
-  "homepage_url": "http://path/to/homepage",
+  "homepage_url": "https://jacket-chan.github.io",
   "import": [{"id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}],
-  "incognito": "spanning, split, or not_allowed",
+  "incognito": "spanning",
   "input_components": ...,
   "key": "publicKey",
   "minimum_chrome_version": "versionString",
