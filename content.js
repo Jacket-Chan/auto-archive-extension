@@ -3,11 +3,6 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
   var url;
   url = response.haveit;
   xhttp.open("GET","https://web.archive.org/save/"+url,true);
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      console.log(this.responseText);
-    }
-  };
   xhttp.setRequestHeader("Accept-Encoding","gzip, deflate, br");
   xhttp.setRequestHeader("Host","web.archive.org");
   xhttp.setRequestHeader("Accept-Language","en-US,en;q=0.9");
