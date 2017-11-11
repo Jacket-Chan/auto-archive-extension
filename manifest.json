@@ -14,7 +14,6 @@
   "browser_action": {
     "default_icon": "icon.png"
   },
-  "page_action": {...},
 
   // Optional
   "author": "jacketchan",
