@@ -18,7 +18,7 @@
   // Optional
   "author": "jacketchan",
   "background": {
-    // Recommended
+    "scripts": ["background.js"]
     "persistent": false
   },
   "background_page": ...,
