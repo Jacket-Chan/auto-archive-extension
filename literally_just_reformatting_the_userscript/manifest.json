@@ -5,6 +5,7 @@
    "browser_action": {
    },
   "background": {
+    "persistent" : true,
     "scripts": ["background.js"]
   },
   "content_scripts": [
