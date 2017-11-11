@@ -13,7 +13,7 @@
   "page_action": {...},
 
   // Optional
-  "author": ...,
+  "author": "jacketchan",
   "automation": ...,
   "background": {
     // Recommended
