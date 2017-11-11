@@ -17,7 +17,6 @@
 
   // Optional
   "author": "jacketchan",
-  "automation": ...,
   "background": {
     // Recommended
     "persistent": false
