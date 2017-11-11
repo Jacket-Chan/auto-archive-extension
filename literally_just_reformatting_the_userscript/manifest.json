@@ -4,6 +4,9 @@
   "version": "1.0",
    "browser_action": {
    },
+  "background": {
+    "scripts": ["background.js"]
+  },
   "content_scripts": [
     {
       "matches": [
