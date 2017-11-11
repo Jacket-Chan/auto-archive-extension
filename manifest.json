@@ -25,7 +25,8 @@
   },
   "content_scripts": [
     {
-      "js": ["archive.js"]
+      "js": ["archive.js"],
+      "run_at": "window.onload"
     }
   ],
   "content_security_policy": "policyString",
