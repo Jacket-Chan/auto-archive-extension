@@ -28,7 +28,6 @@
     "source": "network"
   },
   "homepage_url": "https://jacket-chan.github.io",
-  "import": [{"id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}],
   "incognito": "spanning",
   "minimum_chrome_version": "0.2.149",
   "offline_enabled": true,
