@@ -3,6 +3,6 @@ chrome.runtime.onMessage.addListener(
     console.log(sender.tab ?
                 "from a content script:" + sender.tab.url :
                 "from the extension");
-    if (request.greeting == "hello")
-      sendResponse({farewell: "goodbye"});
+    if (request.alexa == "gimme_tab_url")
+      sendResponse({haveit: sender.tab.url});
   });
