@@ -2,6 +2,7 @@ var xhttp = new XMLHttpRequest();
 var url;
 chrome.tabs.getCurrent(function(tab){
         url = tab.url;
+        console.log(tab.url);
     }
 );
 xhttp.open("GET","https://web.archive.org/save/"+url,true);
