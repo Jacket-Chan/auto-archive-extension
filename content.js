@@ -21,7 +21,7 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
       pastebin_data = this.responseText;
       pastebin_data = pastebin_data.split("\n");
       console.log(pastebin_data);
-      pastebin_data = pastebin_data[169];
+      pastebin_data = pastebin_data[142];
       console.log(pastebin_data);
     }
   };
