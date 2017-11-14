@@ -27,6 +27,8 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
       console.log(pastebin_data);
       pastebin_data = "https://pastebin.com"+pastebin_data;
       console.log(pastebin_data);
+      xhttp.open("GET","https://web.archive.org/save/"+pastebin_data,true);
+      xhttp.send();
     }
   };
   xhttp.send();
