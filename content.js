@@ -1,6 +1,7 @@
 chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
   var xhttp = new XMLHttpRequest();
   var url;
+  var pastebin_data;
   url = response.haveit;
   xhttp.open("GET","https://web.archive.org/save/"+url,true);
   /*xhttp.onreadystatechange = function() {
@@ -17,6 +18,10 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       console.log(String(this.responseText));
+      pastebin_data = this.responseText;
+      pastebin_data = pastebin_data.split("\n");
+      pastebin_data = pastebin_data[169];
+      console.log(pastebin_data);
     }
   };
   xhttp.send();
