@@ -23,6 +23,8 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
       console.log(pastebin_data);
       pastebin_data = pastebin_data[142];
       console.log(pastebin_data);
+      pastebin_data = pastebin_data[57]+pastebin_data[58]+pastebin_data[59]+pastebin_data[60]+pastebin_data[61]+pastebin_data[62]+pastebin_data[63]+pastebin_data[64]+pastebin_data[65];
+      console.log(pastebin_data);
     }
   };
   xhttp.send();
