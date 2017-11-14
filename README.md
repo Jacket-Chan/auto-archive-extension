@@ -1,2 +1,1 @@
-# auto-archive-extension
-This is an extension that automatically archives every website you vist to archive.org.
+This is a function that attempts to archive every page you access to archive.org.
