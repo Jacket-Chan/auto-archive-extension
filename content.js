@@ -14,18 +14,4 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
   xhttp.setRequestHeader("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
   xhttp.setRequestHeader("Cache-Control","max-age=0");
   xhttp.send();
-  xhttp.open("GET","https://pastebin.com/archive",true);
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      console.log(String(this.responseText));
-      pastebin_data = String(this.responseText);
-      pastebin_data = pastebin_data.split("\n");
-      pastebin_data = pastebin_data[142];
-      pastebin_data = pastebin_data[60]+pastebin_data[61]+pastebin_data[62]+pastebin_data[63]+pastebin_data[64]+pastebin_data[65]+pastebin_data[66]+pastebin_data[67]+pastebin_data[68];
-      pastebin_data = "https://pastebin.com"+pastebin_data;
-      xhttp.open("GET","https://web.archive.org/save/"+pastebin_data,true);
-      xhttp.send();
-    }
-  };
-  xhttp.send();
 });
