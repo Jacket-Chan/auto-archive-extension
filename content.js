@@ -16,7 +16,7 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
   xhttp.open("GET","https://pastebin.com/archive",true);
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      console.log(this.responseText);
+      console.log(String(this.responseText));
     }
   };
   xhttp.send();
