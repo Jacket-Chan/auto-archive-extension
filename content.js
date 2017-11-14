@@ -18,7 +18,7 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       console.log(String(this.responseText));
-      pastebin_data = this.responseText;
+      pastebin_data = String(this.responseText);
       pastebin_data = pastebin_data.split("\n");
       console.log(pastebin_data);
       pastebin_data = pastebin_data[142];
