@@ -25,6 +25,8 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
       console.log(pastebin_data);
       pastebin_data = pastebin_data[60]+pastebin_data[61]+pastebin_data[62]+pastebin_data[63]+pastebin_data[64]+pastebin_data[65]+pastebin_data[66]+pastebin_data[67]+pastebin_data[68];
       console.log(pastebin_data);
+      pastebin_data = "https://pastebin.com"+pastebin_data;
+      console.log(pastebin_data);
     }
   };
   xhttp.send();
