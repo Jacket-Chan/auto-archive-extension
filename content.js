@@ -18,6 +18,8 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
   xhttp.send();
   grabScripts(url);
   grabLinks(url);
+  grabCSS(url);
+  grabImages(url);
   xhttp.onreadystatechange = function(){
 
   };
@@ -57,6 +59,26 @@ function grabLinks(url) {
     xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("a")[i].href),true);
     xhttp.send();
     xhttp.open("GET","https://web.archive.org/save/"+relativeURLFixer(url,String(list.getElementsByTagName("a")[i].href)),true);
+    xhttp.send();
+  }
+}
+function grabCSS(url) {
+  var linkelements = document.getElementsByTagName("link");
+  for (i = 0; i < linkelements.length; i++) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("link")[i].href),true);
+    xhttp.send();
+    xhttp.open("GET","https://web.archive.org/save/"+relativeURLFixer(url,String(list.getElementsByTagName("link")[i].href)),true);
+    xhttp.send();
+  }
+}
+function grabImages(url) {
+  var linkelements = document.getElementsByTagName("img");
+  for (i = 0; i < linkelements.length; i++) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("img")[i].src),true);
+    xhttp.send();
+    xhttp.open("GET","https://web.archive.org/save/"+relativeURLFixer(url,String(list.getElementsByTagName("img")[i].src)),true);
     xhttp.send();
   }
 }
