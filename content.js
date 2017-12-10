@@ -14,4 +14,45 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
   xhttp.setRequestHeader("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
   xhttp.setRequestHeader("Cache-Control","max-age=0");
   xhttp.send();
-});   
+  xhttp.open("GET",url,true);
+  xhttp.send();
+  xhttp.onreadystatechange = function(){
+
+  };
+});
+function isURL(url) {
+  //Takes in a string and returns a boolean based on if the string is an active URL
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET",url,true);
+  xhttp.send();
+  var output;
+  xhttp.onreadystatechange = function(){
+    if (this.readyState == 4&&this.status == 200) {
+      output = true;
+    } else {
+      output = false;
+    }
+  };
+  return output;
+}
+function isRelativeURL(baseurl,url) {
+  //This function takes in a baseurl, or the url the possibly relative URL was grabbed from, and the relative URL and returns a boolean
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET",baseurl+"/../"+url,true);
+  var output;
+  xhttp.send();
+  xhttp.onreadystatechange = function(){
+    if (this.readyState == 4&&this.status == 200) {
+      output = true;
+    } else {
+      output = false;
+    }
+  };
+  return output;
+}
+function relativeURLFixer(baseurl,url) {
+  return baseurl+"/../"+url;
+}
+function grabScripts(url) {
+  
+}
