@@ -16,6 +16,7 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
   xhttp.send();
   xhttp.open("GET",url,true);
   xhttp.send();
+  grabScripts();
   xhttp.onreadystatechange = function(){
 
   };
@@ -53,11 +54,18 @@ function isRelativeURL(baseurl,url) {
 function relativeURLFixer(baseurl,url) {
   return baseurl+"/../"+url;
 }
-function grabScripts(url) {
+function grabScripts() {
   var scriptelements = document.getElementsByTagName("script");
   for (i = 0; i < scriptelements.length; i++) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("script")[i].src),true);
     xhttp.send();
+  }
+}
+function grabLinks() {
+  var linkelements = document.getElementsByTagName("a");
+  for (i = 0; i < linkelements.length; i++) {
+    var xhttp = new XMLHttpRequest();
+    
   }
 }
