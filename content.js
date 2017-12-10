@@ -16,7 +16,8 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
   xhttp.send();
   xhttp.open("GET",url,true);
   xhttp.send();
-  grabScripts();
+  grabScripts(url);
+  grabLinks(url);
   xhttp.onreadystatechange = function(){
 
   };
@@ -36,37 +37,26 @@ function isURL(url) {
   };
   return output;
 }
-function isRelativeURL(baseurl,url) {
-  //This function takes in a baseurl, or the url the possibly relative URL was grabbed from, and the relative URL and returns a boolean
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("GET",baseurl+"/../"+url,true);
-  var output;
-  xhttp.send();
-  xhttp.onreadystatechange = function(){
-    if (this.readyState == 4&&this.status == 200) {
-      output = true;
-    } else {
-      output = false;
-    }
-  };
-  return output;
-}
 function relativeURLFixer(baseurl,url) {
   return baseurl+"/../"+url;
 }
-function grabScripts() {
+function grabScripts(url) {
   var scriptelements = document.getElementsByTagName("script");
   for (i = 0; i < scriptelements.length; i++) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("script")[i].src),true);
     xhttp.send();
+    xhttp.open("GET","https://web.archive.org/save/"+relativeURLFixer(url,String(list.getElementsByTagName("script")[i].src)),true);
+    xhttp.send();
   }
 }
-function grabLinks() {
+function grabLinks(url) {
   var linkelements = document.getElementsByTagName("a");
   for (i = 0; i < linkelements.length; i++) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("a")[i].href),true);
+    xhttp.send();
+    xhttp.open("GET","https://web.archive.org/save/"+relativeURLFixer(url,String(list.getElementsByTagName("a")[i].href)),true);
     xhttp.send();
   }
 }
