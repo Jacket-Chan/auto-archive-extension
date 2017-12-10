@@ -44,7 +44,7 @@ function relativeURLFixer(baseurl,url) {
 }
 function grabScripts(url) {
   var list = document.getElementsByTagName("script");
-  for (i = 0; i < scriptelements.length; i++) {
+  for (i = 0; i < list.length; i++) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("script")[i].src),true);
     xhttp.send();
@@ -54,7 +54,7 @@ function grabScripts(url) {
 }
 function grabLinks(url) {
   var list = document.getElementsByTagName("a");
-  for (i = 0; i < linkelements.length; i++) {
+  for (i = 0; i < list.length; i++) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("a")[i].href),true);
     xhttp.send();
@@ -64,7 +64,7 @@ function grabLinks(url) {
 }
 function grabCSS(url) {
   var list = document.getElementsByTagName("link");
-  for (i = 0; i < linkelements.length; i++) {
+  for (i = 0; i < list.length; i++) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("link")[i].href),true);
     xhttp.send();
@@ -74,7 +74,7 @@ function grabCSS(url) {
 }
 function grabImages(url) {
   var list = document.getElementsByTagName("img");
-  for (i = 0; i < linkelements.length; i++) {
+  for (i = 0; i < list.length; i++) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("img")[i].src),true);
     xhttp.send();
