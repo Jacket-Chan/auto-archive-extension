@@ -54,5 +54,10 @@ function relativeURLFixer(baseurl,url) {
   return baseurl+"/../"+url;
 }
 function grabScripts(url) {
-  
+  var scriptelements = document.getElementsByTagName("script");
+  for (i = 0; i < scriptelements.length; i++) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("script")[i].src),true);
+    xhttp.send();
+  }
 }
