@@ -66,6 +66,7 @@ function grabLinks() {
   var linkelements = document.getElementsByTagName("a");
   for (i = 0; i < linkelements.length; i++) {
     var xhttp = new XMLHttpRequest();
-    
+    xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("a")[i].href),true);
+    xhttp.send();
   }
 }
