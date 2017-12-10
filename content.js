@@ -43,42 +43,38 @@ function relativeURLFixer(baseurl,url) {
   return baseurl+"/../"+url;
 }
 function grabScripts(url) {
-  var list = document.getElementsByTagName("script");
-  for (i = 0; i < list.length; i++) {
+  for (i = 0; i < document.getElementsByTagName("script").length; i++) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("script")[i].src),true);
+    xhttp.open("GET","https://web.archive.org/save/"+String(document.getElementsByTagName("script")[i].src),true);
     xhttp.send();
-    xhttp.open("GET","https://web.archive.org/save/"+relativeURLFixer(url,String(list.getElementsByTagName("script")[i].src)),true);
+    xhttp.open("GET","https://web.archive.org/save/"+relativeURLFixer(url,String(document.getElementsByTagName("script")[i].src)),true);
     xhttp.send();
   }
 }
 function grabLinks(url) {
-  var list = document.getElementsByTagName("a");
-  for (i = 0; i < list.length; i++) {
+  for (i = 0; i < document.getElementsByTagName("a").length; i++) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("a")[i].href),true);
+    xhttp.open("GET","https://web.archive.org/save/"+String(document.getElementsByTagName("a")[i].href),true);
     xhttp.send();
-    xhttp.open("GET","https://web.archive.org/save/"+relativeURLFixer(url,String(list.getElementsByTagName("a")[i].href)),true);
+    xhttp.open("GET","https://web.archive.org/save/"+relativeURLFixer(url,String(document.getElementsByTagName("a")[i].href)),true);
     xhttp.send();
   }
 }
 function grabCSS(url) {
-  var list = document.getElementsByTagName("link");
-  for (i = 0; i < list.length; i++) {
+  for (i = 0; i < document.getElementsByTagName("link").length; i++) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("link")[i].href),true);
+    xhttp.open("GET","https://web.archive.org/save/"+String(document.getElementsByTagName("link")[i].href),true);
     xhttp.send();
-    xhttp.open("GET","https://web.archive.org/save/"+relativeURLFixer(url,String(list.getElementsByTagName("link")[i].href)),true);
+    xhttp.open("GET","https://web.archive.org/save/"+relativeURLFixer(url,String(document.getElementsByTagName("link")[i].href)),true);
     xhttp.send();
   }
 }
 function grabImages(url) {
-  var list = document.getElementsByTagName("img");
-  for (i = 0; i < list.length; i++) {
+  for (i = 0; i < document.getElementsByTagName("script").length; i++) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET","https://web.archive.org/save/"+String(list.getElementsByTagName("img")[i].src),true);
+    xhttp.open("GET","https://web.archive.org/save/"+String(document.getElementsByTagName("img")[i].src),true);
     xhttp.send();
-    xhttp.open("GET","https://web.archive.org/save/"+relativeURLFixer(url,String(list.getElementsByTagName("img")[i].src)),true);
+    xhttp.open("GET","https://web.archive.org/save/"+relativeURLFixer(url,String(document.getElementsByTagName("img")[i].src)),true);
     xhttp.send();
   }
 }
