@@ -14,11 +14,10 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
   xhttp.setRequestHeader("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
   xhttp.setRequestHeader("Cache-Control","max-age=0");
   xhttp.send();
-  /*
   grabScripts(url);
   grabLinks(url);
   grabCSS(url);
-  grabImages(url);*/
+  grabImages(url);
 });
 function isURL(url) {
   //Takes in a string and returns a boolean based on if the string is an active URL
