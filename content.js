@@ -16,13 +16,11 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
   xhttp.send();
   xhttp.open("GET",url,true);
   xhttp.send();
+  /*
   grabScripts(url);
   grabLinks(url);
   grabCSS(url);
-  grabImages(url);
-  xhttp.onreadystatechange = function(){
-
-  };
+  grabImages(url);*/
 });
 function isURL(url) {
   //Takes in a string and returns a boolean based on if the string is an active URL
