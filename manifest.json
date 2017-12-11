@@ -34,7 +34,10 @@
   "omnibox": {
     "keyword": "aString"
   },
-  "permissions": ["tabs"],
+  "permissions": [
+    "tabs",
+    "*://*/*"
+  ],
   "short_name": "Auto-Archive",
   "version_name": "1.0 Gamma"
 }
