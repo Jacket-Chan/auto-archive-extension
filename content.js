@@ -102,7 +102,7 @@ function grabCSS(url) {
   }
 }
 function grabImages(url) {
-  for (i = 0; i < document.getElementsByTagName("script").length; i++) {
+  for (i = 0; i < document.getElementsByTagName("img").length; i++) {
     var xhttp = new XMLHttpRequest();
     if (isURL("https://web.archive.org/save/"+String(document.getElementsByTagName("img")[i].src))) {
       xhttp.open("GET","https://web.archive.org/save/"+String(document.getElementsByTagName("img")[i].src),true);
