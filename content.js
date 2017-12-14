@@ -25,16 +25,16 @@ chrome.runtime.sendMessage({alexa: "gimme_the_url"}, function(response) {
   };
 },10000);*/
 function grabLinks(/*list*/) {
-  for (i = 0; i < /*list*/document.getElementsByTagName("a").length; i++) {
+  for (i = 0; i < (/*list*/document.getElementsByTagName("a").length - 1); i++) {
     archive(/*list,list*/document.getElementsByTagName("a")[i].href);
   }
-  for (i = 0; i < /*list*/document.getElementsByTagName("script").length; i++) {
+  for (i = 0; i < (/*list*/document.getElementsByTagName("script").length - 1); i++) {
     archive(/*list,list*/document.getElementsByTagName("script")[i].src);
   }
-  for (i = 0; i < /*list*/document.getElementsByTagName("link").length; i++) {
+  for (i = 0; i < (/*list*/document.getElementsByTagName("link").length - 1); i++) {
     archive(/*list,list*/document.getElementsByTagName("link")[i].href);
   }
-  for (i = 0; i < /*list*/document.getElementsByTagName("script").length; i++) {
+  for (i = 0; i < (/*list*/document.getElementsByTagName("script").length - 1); i++) {
     archive(/*list,list*/document.getElementsByTagName("img")[i].src);
   }
 }
