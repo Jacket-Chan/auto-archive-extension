@@ -47,7 +47,7 @@ function archive(/*page,*/url) {
   xhttp.setRequestHeader("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
   xhttp.setRequestHeader("Cache-Control","max-age=0");
   xhttp.send();
-  if (baseurl[baeurl.length - 1] == "/") {
+  if (baseurl[baseurl.length - 1] == "/") {
     xhttp.open("GET","https://web.archive.org/save/"+String(baseurl+"../"+url),true);
   } else {
     xhttp.open("GET","https://web.archive.org/save/"+String(baseurl+"/../"+url),true);
