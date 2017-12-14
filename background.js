@@ -1,1 +1,8 @@
-eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('e.7.3.4(8(a,b,c){5.6(b.0?"1 a 9 d:"+b.0.2:"1 f g");h(a.i=="j")c({k:b.0.2})});',21,21,'tab|from|url|onMessage|addListener|console|log|runtime|function|content||||script|chrome|the|extension|if|alexa|gimme_the_url|haveit'.split('|'),0,{}))
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log(sender.tab ?
+                "from a content script:" + sender.tab.url :
+                "from the extension");
+    if (request.alexa == "gimme_the_url")
+      sendResponse({haveit: sender.tab.url});
+});
