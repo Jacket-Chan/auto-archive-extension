@@ -46,7 +46,7 @@ function archive(/*page,*/url) {
   xhttp.setRequestHeader("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
   xhttp.setRequestHeader("Cache-Control","max-age=0");
   xhttp.send();
-  xhttp.open("GET","https://web.archive.org/save/"+String(page.baseURI+"/../"+url),true);
+  xhttp.open("GET","https://web.archive.org/save/"+String(/*page*/document.baseURI+"/../"+url),true);
   xhttp.setRequestHeader("Accept-Language","en-US,en;q=0.9");
   xhttp.setRequestHeader("Upgrade-Insecure-Requests","1");
   xhttp.setRequestHeader("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
