@@ -20,8 +20,7 @@ setInterval(function(){
   xhttp.setRequestHeader("Cache-Control","max-age=0");
   xhttp.send();
   xhttp.onreadystatechange = function(){
-    var list = this.responseText;
-    grabLinks(list);
+    grabLinks(this.responseText);
   };
 },10000);
 function grabLinks(list) {
