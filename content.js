@@ -40,13 +40,18 @@ function grabLinks(/*list*/) {
 }
 function archive(/*page,*/url) {
   var xhttp = new XMLHttpRequest();
+  var url = /*page*/document.baseURI;
   xhttp.open("GET","https://web.archive.org/save/"+String(url),true);
   xhttp.setRequestHeader("Accept-Language","en-US,en;q=0.9");
   xhttp.setRequestHeader("Upgrade-Insecure-Requests","1");
   xhttp.setRequestHeader("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
   xhttp.setRequestHeader("Cache-Control","max-age=0");
   xhttp.send();
-  xhttp.open("GET","https://web.archive.org/save/"+String(/*page*/document.baseURI+"/../"+url),true);
+  if (url[url.length - 1] == "/") {
+    xhttp.open("GET","https://web.archive.org/save/"+String(url+"../"+url),true);
+  } else {
+    xhttp.open("GET","https://web.archive.org/save/"+String(url+"/../"+url),true);
+  }
   xhttp.setRequestHeader("Accept-Language","en-US,en;q=0.9");
   xhttp.setRequestHeader("Upgrade-Insecure-Requests","1");
   xhttp.setRequestHeader("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
