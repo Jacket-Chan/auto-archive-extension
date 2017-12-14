@@ -39,6 +39,7 @@ function grabLinks(/*list*/) {
   }
 }
 function archive(/*page,*/url) {
+  var xhttp = new XMLHttpRequest();
   xhttp.open("GET","https://web.archive.org/save/"+String(url),true);
   xhttp.setRequestHeader("Accept-Language","en-US,en;q=0.9");
   xhttp.setRequestHeader("Upgrade-Insecure-Requests","1");
